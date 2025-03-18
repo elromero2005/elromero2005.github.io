@@ -1,1 +1,1 @@
-# elromero2005.github.io
+Este es mi repositorio para marcas y ampliación de marcas
