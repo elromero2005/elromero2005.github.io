@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../styles/main.css">
     <script src="../scripts/main.js"></script>
 </head>
-<body onload="NuevoProducto(getValue('url'), getValue('precio'), getValue('velocidad'), getValue('seccion'), getValue('uso'), getValue('puerto'))"> 
+<body onload=""> 
     <header>
         <nav>
             <ul>
@@ -27,13 +27,16 @@
                 <li>
                     <a href="tarjetas_wifi.html">Tarjetas WIFI</a>
                 </li>
+                <li>
+                    <a href="#">Añadir Producto</a>
+                </li>
             </ul>
         </nav>
     </header>
     <div class="content">
         <h1>AÑADIR PRODUCTO</h1>
         <h3>¿Eres un vendedor que quiere prestar sus servicios a la web? ¡Esta es tu página!</h3>
-        <form action="crear_producto.html">
+        <form action="#">
             <div>
                 <label for="">URL de la imagen:</label>
                 <input type="text" placeholder="http..." name="url">
@@ -47,8 +50,8 @@
                 <input type="number" placeholder="...Gbps" name="velocidad">
             </div>
             <div>
-                <label for="">Sección, 0 de red, 1 de óptica, 2 ethernet, 4 wifi:</label>
-                <input type="number" placeholder="0 de red, 1 de óptica, 2 ethernet, 4 wifi" name="seccion">
+                <label for="">Sección, 0 de red, 1 de óptica, 2 ethernet, 3 wifi:</label>
+                <input type="number" placeholder="0 de red, 1 de óptica, 2 ethernet, 3 wifi" name="seccion">
             </div>
             <div>
                 <label for="">Uso:</label>
@@ -58,7 +61,7 @@
                 <label for="">Puerto:</label>
                 <input type="text" placeholder="PCIe.." name="puerto">
             </div>
-            <input type="submit" value="Introducir" onclick="console.log(productos)">
+            <input type="submit" value="Introducir" onclick="NuevoProducto(getValue('url'), getValue('precio'), getValue('velocidad'), getValue('seccion'), getValue('uso'), getValue('puerto')); console.log(getValue('url'));">
         </form>
     </div>
     <footer>

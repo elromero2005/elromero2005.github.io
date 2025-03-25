@@ -93,15 +93,24 @@ let productos = [new Producto("../img/5.webp", 119.99, 0, "10 Gbps", "Empresaria
                 new Producto("../img/13.webp", 27, 3, "600 Mbps", "Doméstico", "PCIe"),
                 new Producto("../img/14.png", 55, 3, "1.3 Gbps", "Doméstico", "PCIe")]
 
+
+for (let i = 0; i < localStorage.length; i++) {
+    console.log(1111);
+    if (localStorage.key(i).startsWith("Producto: ")) {
+        let producto = localStorage.getItem(localStorage.key(i))
+        producto = producto.split(",");
+        productos.push(new Producto(producto[0], producto[1], producto[3], producto[2], producto[4], producto[5]))
+    }
+}
+
 function NuevoProducto(url, precio, seccion, velocidad, uso, puerto) {
-    productos.push(new Producto(url, precio, seccion, velocidad, uso, puerto));
+    localStorage.setItem("Producto: " + productos.length, [url, precio, seccion, velocidad, uso, puerto]);
 }
                 
+function getValue(name) {
+    return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(name).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+}
 
 function main(num) {
     productos[num*4].CargarProductos(productos)
-}
-
-function getValue(name) {
-    return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(name).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
 }
