@@ -1,0 +1,134 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jacko_04</title>
+    <style>
+        h1, tr, td, th {
+            font-family: Arial;
+            text-align: center;
+        }
+        .bloque {
+            padding: 20px;
+            width: 500px;
+            font-family: Arial, sans-serif;
+        }
+        .titulo {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px; 
+        }
+        .campo {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px; 
+        }
+        .input {
+            flex: 1;
+            margin-left: 10px; 
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px; 
+        }
+        .boton {
+            padding: 10px;
+            border: none;
+            border-radius: 5px; 
+            background-color: #007bff; 
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            margin-right: auto; 
+            display: block;
+        }
+        .boton:hover {
+            background-color: #0056b3; 
+        }
+        img{
+            width: 200px;
+        }
+        .custom-swal-popup {
+        font-family: Arial, sans-serif;
+    }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <h1>Michael Jackson</h1>
+    <table align="center">
+        <tr>
+            <th>LP</th>
+            <th>Biografía</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="bloque">
+                    <div class="campo">
+                        <label for="disco">Disco</label>
+                        <input type="text" id="disco" class="input" disabled>
+                    </div>
+                    <div class="campo">
+                        <label for="nº_unidades">Nº Unidades</label>
+                        <input type="text" id="nº_unidades" class="input" disabled>
+                    </div>
+                    <div class="campo">
+                        <label for="precio">Precio</label>
+                        <input type="text" id="precio" class="input" disabled>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="bloque">
+                    <div class="campo">
+                        <label for="año_publicado">Año Publicado</label>
+                        <input type="text" id="año_publicado" class="input" disabled>
+                    </div>
+                    <div class="campo">
+                        <label for="fecha_título">Fecha Título</label>
+                        <input type="text" id="fecha_titulo" class="input" disabled>
+                    </div>
+                    <div class="campo">
+                        <label for="rango_nivel">Rango de Nivel</label>
+                        <input type="range" id="rango_nivel" class="input" disabled min="0" max="200">
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div style="text-align: center;">
+        <img src="images/mjlogo.png" id="img1" style="cursor: pointer;">
+    </div>
+    <button class="boton" id="boton1">Atrás</button>
+    <script>
+        function getQueryParam(param) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(param);
+        }
+
+       
+        document.getElementById("disco").value = getQueryParam("disco") || "";
+        document.getElementById("nº_unidades").value = getQueryParam("nº_unidades") || "";
+        document.getElementById("precio").value = getQueryParam("precio") || "";
+        document.getElementById("año_publicado").value = getQueryParam("año_publicado") || "";
+        document.getElementById("fecha_titulo").value = getQueryParam("fecha_titulo") || "";
+        document.getElementById("rango_nivel").value = getQueryParam("rango_nivel") || "";
+        
+        document.getElementById("boton1").addEventListener("click", function() {
+
+            window.location.href = "jacko_01.html";
+        });
+
+        document.getElementById("img1").addEventListener("click", function() {
+            Swal.fire({
+                title: 'Vive',
+                text: 'La vida es bonita bonita',
+                imageUrl: 'images/alert.png',
+                imageWidth: 300,
+                imageAlt: 'Logo Michael Jackson',
+                confirmButtonText: 'OK',
+                customClass: {
+                popup: 'custom-swal-popup'
+            }
+            });
+        });
+    </script>
+</body>

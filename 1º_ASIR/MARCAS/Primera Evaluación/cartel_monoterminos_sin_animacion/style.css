@@ -1,0 +1,54 @@
+body {
+    font-family: Arial;
+    text-align: center;
+    background-color: #e0f7fa;
+}
+
+h1 {
+    color: #00796b;
+}
+
+.cartel {
+    background-color: white;
+    border: 2px solid darkblue;
+    padding: 20px;
+    margin: 50px auto;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+
+.qa {
+    display: flex; /* Cambia a flex para alinear horizontalmente */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: space-between; /* Espacio entre pregunta y respuesta */
+    width: 100%; /* Ocupa todo el ancho del cartel */
+    height: 100px; /* Ajusta la altura según sea necesario */
+    perspective: 1000px; /* Para la perspectiva de la rotación */
+    margin: 10px 0; /* Espaciado vertical entre preguntas */
+}
+
+.pregunta {
+    background-color: #f8f9fa; /* Color de fondo para la pregunta */
+    flex: 1; /* Ocupa el espacio restante */
+    margin-right: 10px; /* Espacio entre pregunta y respuesta */
+    display: flex; /* Para centrar el texto dentro del cuadrado */
+    align-items: center; /* Centra verticalmente el texto */
+    justify-content: center; /* Centra horizontalmente el texto */
+    border: 1px solid #ccc; /* Borde para el contenedor */
+    border-radius: 5px; /* Bordes redondeados */
+    height: 80px;
+}
+
+.respuesta {
+    background-color: #e9ecef; /* Color de fondo para la respuesta */
+    width: 100px; /* Ajusta el tamaño del cuadrado de la respuesta */
+    height: 80px; /* Ajusta la altura del cuadrado de la respuesta */
+    display: flex; /* Para centrar el texto dentro del cuadrado */
+    align-items: center; /* Centra verticalmente el texto */
+    justify-content: center; /* Centra horizontalmente el texto */
+    border: 1px solid #ccc; /* Borde para el contenedor */
+    border-radius: 5px; /* Bordes redondeados */
+}

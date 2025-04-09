@@ -1,0 +1,60 @@
+body {
+    font-family: Arial;
+    text-align: center;
+    background-color: #e0f7fa;
+}
+.cartel {
+    background-color: white;
+    border: 2px solid darkblue;
+    padding: 20px;
+    margin: 50px auto;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+h1 {
+    color: #00796b;
+}
+.foto {
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+}
+.qa {
+    position: relative;
+    width: 100%; /* Ocupa todo el ancho del cartel */
+    height: 100px; /* Ajusta la altura según sea necesario */
+    perspective: 1000px; /* Para la perspectiva de la rotación */
+    margin: 10px 0; /* Espaciado vertical entre preguntas */
+}
+
+.qa div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta la parte trasera */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc; /* Borde para el contenedor */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: transform 0.6s; /* Transición suave */
+}
+
+.pregunta {
+    background-color: #f8f9fa; /* Color de fondo para la pregunta */
+}
+
+.respuesta {
+    background-color: #e9ecef; /* Color de fondo para la respuesta */
+    transform: rotateY(180deg); /* Gira la respuesta */
+}
+
+.qa:hover .pregunta {
+    transform: rotateY(180deg); /* Gira la pregunta al pasar el ratón quitando la pregunta*/
+}
+
+.qa:hover .respuesta {
+    transform: rotateY(0deg); /* Muestra la respuesta al pasar el ratón mostrando la respuesta*/
+}

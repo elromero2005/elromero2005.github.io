@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jacko_02</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Michael Jackson</h1>
+    <table align="center">
+        <tr>
+            <td>
+                <div class="bloque">
+                    <div class="titulo">LP</div>
+                    <div class="campo">
+                      <label for="disco">Disco</label>
+                      <input type="text" id="disco" class="input" disabled>
+                    </div>
+                    <div class="campo">
+                      <label for="nº_unidades">Nº Unidades</label>
+                      <input type="text" id="nº_unidades" class="input" disabled>
+                    </div>
+                    <div class="campo">
+                        <label for="precio">Precio</label>
+                        <input type="text" id="precio" class="input">
+                      </div>
+                    <button class="boton" id="boton1">Fin</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <h1>Portada del Disco</h1>
+    <div style="text-align: center;">
+        <img src="images/portada_disco.jfif" alt="Portada del Disco">
+    </div>
+    
+    <script>
+        function getQueryParam(param) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(param);
+        }
+
+        
+        document.getElementById("disco").value = getQueryParam("disco") || "";
+        document.getElementById("nº_unidades").value = getQueryParam("nº_unidades") || "";
+
+        document.getElementById("boton1").addEventListener("click", function() {
+            
+            const disco = encodeURIComponent(document.getElementById("disco").value);
+            const unidades = encodeURIComponent(document.getElementById("nº_unidades").value);
+            const precio = encodeURIComponent(document.getElementById("precio").value);
+
+            const url = `jacko_04.html?disco=${disco}&nº_unidades=${unidades}&precio=${precio}`;
+
+
+            window.location.href = url;
+        });
+    </script>
+</body>
+</html>

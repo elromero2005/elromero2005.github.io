@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Obtener el valor del parámetro de la URL (NAME)
+        function getValue(name) {
+            return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(name).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1")); 
+        }
+        // Poner el valor en la URL (NAME)
+        function setValue(name, value) {
+            document.getElementsByName(name)[0].value = value;
+        }
+        // Obtener el valor del parámetro de la URL (PASSWORD)
+        function getValue(password) {
+            return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(password).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1")); 
+        }
+        // Poner el valor en la URL (PASSWORD)
+        function setValue(password, value) {
+            document.getElementsByName(password)[0].value = value;
+        }
+        // Obtener el valor del parámetro de la URL (CONTADOR1)
+        function getValue(contador1) {
+            return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(contador1).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1")); 
+        }
+        // Poner el valor en la URL (CONTADOR1)
+        function setValue(contador1, value) {
+            document.getElementsByName(contador1)[0].value = value;
+        }
+        // Obtener el valor del parámetro de la URL (CONTADOR21)
+        function getValue(contador2) {
+            return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(contador2).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1")); 
+        }
+        // Poner el valor en la URL (CONTADOR2)
+        function setValue(contador2, value) {
+            document.getElementsByName(contador2)[0].value = value;
+        }
+        // Obtener el valor del parámetro de la URL (NLISTA)
+        function getValue(nLista) {
+            return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(nLista).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1")); 
+        }
+        // Poner el valor en la URL (NLISTA)
+        function setValue(nLista, value) {
+            document.getElementsByName(nLista)[0].value = value;
+        }
+        // Obtener el valor del parámetro de la URL (DIA)
+        function getValue(dia) {
+            return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(dia).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1")); 
+        }
+        // Poner el valor en la URL (DIA)
+        function setValue(dia, value) {
+            document.getElementsByName(dia)[0].value = value;
+        }
+        // Obtener el valor del parámetro de la URL (FECHA CUMPLE)
+        function getValue(fecha_cumple) {
+            return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(fecha_cumple).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1")); 
+        }
+        // Poner el valor en la URL (FECHA CUMPLE)
+        function setValue(fecha_cumple, value) {
+            document.getElementsByName(fecha_cumple)[0].value = value;
+        }
+        // Obtener el valor del parámetro de la URL (EMAIL)
+        function getValue(email) {
+            return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(email).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1")); 
+        }
+        // Poner el valor en la URL (EMAIL)
+        function setValue(email, value) {
+            document.getElementsByName(email)[0].value = value;
+        }
+        // Obtener el valor del parámetro de la URL (MES ACTUAL)
+        function getValue(mesActual) {
+            return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(mesActual).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1")); 
+        }
+        // Poner el valor en la URL (MES ACTUAL)
+        function setValue(mesActual, value) {
+            document.getElementsByName(mesActual)[0].value = value;
+        }
+        // Obtener el valor del parámetro de la URL (RANGO)
+        function getValue(rango) {
+            return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(rango).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1")); 
+        }
+        // Poner el valor en la URL (RANGO)
+        function setValue(rango, value) {
+            document.getElementsByName(rango)[0].value = value;
+        }
+        // Llamar a setValue al cargar la página
+        window.onload = function() {
+            var nombre = getValue('nombre');
+            setValue('nombre', nombre);
+            var password = getValue('contraseña');
+            setValue('contraseña', nombre);
+            var contador1 = getValue('contador1');
+            contador1 = Number(contador1); // Convertir a número
+            contador1 += 1; // Sumar 1
+            setValue('contador1', contador1);
+            var nLista = getValue('nLista');
+            setValue('nLista', nLista);
+            var nombre = getValue('dia');
+            setValue('dia', nombre);
+            var contador2 = getValue('contador2');
+            contador2 = Number(contador2); // Convertir a número
+            contador2 += 2; // Sumar 2
+            setValue('contador2', contador2);
+            var nombre = getValue('fecha_cumple');
+            setValue('fecha_cumple', nombre);
+            var nombre = getValue('email');
+            setValue('email', nombre);
+            var nombre = getValue('mesActual');
+            setValue('mesActual', nombre);
+            var nombre = getValue('rango');
+            setValue('rango', nombre);
+        };
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Formulario</h1>
+    <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" readonly id="name" name="nombre" required>
+        <br><br>
+        <label for="contraseña">Password:</label>
+        <input type="password" readonly id="password" name="contraseña" required>
+        <br><br>
+        <label for="nLista">Nº de Lista:</label>
+        <input type="number" readonly id="nLista" name="nLista" required>
+        <br><br>
+        <label for="dia">Día:</label>
+        <input type="date" readonly id="dia" name="dia" required>
+        <br><br>
+        <label for="contador1">Contador + 1:</label>
+        <input type="number" readonly id="contador1" name="contador1" required>
+        <br><br>
+        <label for="contador2">Contador + 2:</label>
+        <input type="number" readonly id="contador2" name="contador2" required>
+        <br><br>
+        <label for="fecha_cumple">Fecha del Cumpleaños:</label>
+        <input type="date" readonly id="fecha_cumple" name="fecha_cumple" required>
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" readonly id="email" name="email" required>
+        <br><br>
+        <label for="mesActual">Mes Actual:</label>
+        <input type="month" readonly id="mesActual" name="mesActual" required>
+        <br><br>
+        <label for="rango">Rango:</label>
+        <input type="range" disabled id="rango" name="rango" required>
+        <br><br>
+    </form>
+    <form action="index.html" method="get">
+        <input type="hidden" name="clear" value="true">
+        <input type="submit" value="Al Inicio">
+    </form>
+</body>
+</html>

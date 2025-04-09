@@ -1,0 +1,21 @@
+* {
+    text-align: center;
+    color: blue;
+}
+.grandegrande {
+    font-family: monospace;
+    font-size: 60px;
+    color: yellow;
+}
+.medianamediana {
+    font-family: sans-serif;
+    font-size: 30px;
+    color: red;
+}
+p {
+    font-family: monospace;
+    font-size: 60px;
+}
+#choco {
+    color: green;
+}

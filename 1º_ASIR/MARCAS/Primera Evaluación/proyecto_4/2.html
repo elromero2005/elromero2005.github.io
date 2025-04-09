@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 2 - Formulario</title>
+    <script>
+        function mostrarDatos() {
+            const nombre = localStorage.getItem('nombre');
+            const apellido = localStorage.getItem('apellido');
+            document.getElementById('nombre').value = nombre ? nombre : '';
+            document.getElementById('apellido').value = apellido ? apellido : '';
+        }
+
+        function guardarDatos() {
+            const nombre = document.getElementById('nombre').value;
+            const apellido = document.getElementById('apellido').value;
+            localStorage.setItem('nombre', nombre);
+            localStorage.setItem('apellido', apellido);
+            alert('Datos guardados');
+        }
+    </script>
+</head>
+<body onload="mostrarDatos()">
+    <h1>Formulario de Datos</h1>
+    <form onsubmit="guardarDatos(); return false;">
+        <p>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+        </p>
+        <p>
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" required>
+        </p>
+        <button type="submit">Guardar</button>
+    </form>
+    <a href="1.html">Volver al formulario anterior</a>
+</body>
+</html>

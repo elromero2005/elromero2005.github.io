@@ -1,0 +1,21 @@
+body {
+    background-image: url('../images/steampuck1.jpg');
+    background-size: cover;
+    background-position: center 30%; 
+    background-repeat: no-repeat;
+    color: white; 
+    font-family: Arial;
+}
+.img-custom {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+.content-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px);
+}

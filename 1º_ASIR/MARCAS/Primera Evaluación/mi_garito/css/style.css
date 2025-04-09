@@ -1,0 +1,54 @@
+.navbar-nav .nav-link.active {
+    text-decoration: underline; /* Subrayar el texto */
+    text-decoration-color: white; /* Cambiar el color del subrayado a negro */
+    color: white;
+}
+#carouselExample .carousel-item img {
+    max-height: 65vh; /* Altura máxima del 50% de la altura del viewport */
+    width: 100%; /* Asegurar que la imagen sea responsiva */
+    object-fit: cover; /* Mantener la proporción de la imagen */
+}
+.card {
+    height: 300px; /* Establecer una altura fija para todas las tarjetas */
+    display: flex; /* Usar flexbox para alinear el contenido */
+    flex-direction: column; /* Colocar el contenido en columna */
+    justify-content: space-between; /* Espaciar el contenido dentro de la tarjeta */
+    background-color: transparent;
+    color: white;
+}
+.card-body {
+    display: flex; /* Usar flexbox en el cuerpo de la tarjeta */
+    flex-direction: column; /* Colocar el contenido en columna */
+    align-items: center; /* Centrar horizontalmente */
+    justify-content: center; /* Centrar verticalmente */
+    height: 100%; /* Asegurar que ocupe toda la altura de la tarjeta */
+}
+.card-img-top {
+    max-width: 40%; /* Cambiar el ancho máximo a un 40% del contenedor */
+    height: auto; /* Mantener la proporción de la imagen */
+    margin: 0 auto; /* Centrar la imagen horizontalmente */
+}
+body {
+    background-color: black;
+    color: white;
+}
+footer {
+    color: white;
+}
+.navbar-nav .nav-link {
+    color: white; /* Cambiar el color del texto a blanco para encabezados y menú */
+}
+.form-control{
+    background-color: #333;
+    color: white;
+}
+
+.form-control:focus {
+    background-color: #333; /* Mantiene el fondo oscuro */
+    color: white; /* Mantiene el texto en blanco */
+    outline: none; /* Elimina el contorno predeterminado */
+    box-shadow: none; /* Elimina la sombra de Bootstrap */
+}
+table{
+    background-color: black;
+}

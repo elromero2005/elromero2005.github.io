@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jacko_03</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Michael Jackson</h1>
+    <table align="center">
+        <tr>
+            <td>
+                <div class="bloque">
+                    <div class="titulo">Biografia</div>
+                    <div class="campo">
+                      <label for="año_publicado">Año Publicado</label>
+                      <input type="text" id="año_publicado" class="input" disabled>
+                    </div>
+                    <div class="campo">
+                      <label for="fecha_titulo">Fecha Título</label>
+                      <input type="text" id="fecha_titulo" class="input" disabled>
+                    </div>
+                    <div class="campo">
+                        <label for="rango_nivel">Rango de Nivel</label>
+                        <input type="range" id="rango_nivel" class="input" min="0" max="200">
+                      </div>
+                      <div style="text-align: center;">
+                        <img src="images/vida1.webp">
+                        <img src="images/vida2.avif">
+                    </div>
+                    <button class="boton" id="boton1">Fin</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+    
+    <script>
+        function getQueryParam(param) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(param);
+        }
+
+        
+        document.getElementById("año_publicado").value = getQueryParam("año_publicado") || "";
+        document.getElementById("fecha_titulo").value = getQueryParam("fecha_titulo") || "";
+
+        document.getElementById("boton1").addEventListener("click", function() {
+            
+            const año_publicado = encodeURIComponent(document.getElementById("año_publicado").value);
+            const fecha_titulo = encodeURIComponent(document.getElementById("fecha_titulo").value);
+            const rango_nivel = encodeURIComponent(document.getElementById("rango_nivel").value);
+
+            
+            const url = `jacko_04.html?año_publicado=${año_publicado}&fecha_titulo=${fecha_titulo}&rango_nivel=${rango_nivel}`;
+
+          
+            window.location.href = url;
+        });
+    </script>
+</body>
+</html>

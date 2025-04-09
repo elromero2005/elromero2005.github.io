@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 1 - Formulario</title>
+    <script>
+        function guardarDatos() {
+            const nombre = document.getElementById('nombre').value;
+            const apellido = document.getElementById('apellido').value;
+            localStorage.setItem('nombre', nombre);
+            localStorage.setItem('apellido', apellido);
+        }
+
+        function autoGuardar() {
+            guardarDatos();
+        }
+    </script>
+</head>
+<body>
+    <h1>Formulario de Datos</h1>
+    <form>
+        <p>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required onchange="autoGuardar()">
+        </p>
+        <p>
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" required onchange="autoGuardar()">
+        </p>
+        <a href="2.html">Ir a Página 2</a>
+    </form>
+</body>
+</html>

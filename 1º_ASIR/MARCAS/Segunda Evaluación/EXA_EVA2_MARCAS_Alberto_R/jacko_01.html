@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jacko_01</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Michael Jackson</h1>
+    <table align="center">
+        <tr><td>
+    <div class="bloque">
+        <div class="titulo">Data</div>
+        <div class="campo">
+          <label for="edad1">Edad 1:</label>
+          <input type="text" id="edad1" class="input">
+        </div>
+        <div class="campo">
+          <label for="edad2">Edad 2:</label>
+          <input type="text" id="edad2" class="input">
+        </div>
+        <button class="boton" id="boton1">Update</button>
+    </div>
+    <br>
+    <div class="bloque">
+        <div class="titulo">LP</div>
+        <div class="campo">
+          <label for="disco">Disco</label>
+          <input type="text" id="disco" class="input">
+        </div>
+        <div class="campo">
+          <label for="nº_unidades">Nº Unidades</label>
+          <input type="text" id="nº_unidades" class="input">
+        </div>
+        <button class="boton" id="boton2">Comprar</button>
+    </div>
+    <br>
+    <div class="bloque">
+        <div class="titulo">Biografia</div>
+        <div class="campo">
+          <label for="año_publicado">Año Publicado</label>
+          <input type="text" id="año_publicado" class="input">
+        </div>
+        <div class="campo">
+          <label for="fecha_titulo">Fecha Título</label>
+          <input type="text" id="fecha_titulo" class="input">
+        </div>
+        <button class="boton" id="boton3">Leer</button>
+    </div>
+    </td></tr>
+    </table>
+    <script>
+        document.getElementById("boton1").addEventListener("click", function() {
+ 
+            const edad1Input = document.getElementById("edad1");
+            const edad2Input = document.getElementById("edad2");
+            let edad1 = parseInt(edad1Input.value) || 0; 
+            let edad2 = parseInt(edad2Input.value) || 0;
+
+            
+            edad1 += 1;
+            edad2 -= 2;
+
+      
+            edad1Input.value = edad1;
+            edad2Input.value = edad2;
+        });
+        document.getElementById("boton2").addEventListener("click", function() {
+          
+            const disco = encodeURIComponent(document.getElementById("disco").value);
+            const unidades = encodeURIComponent(document.getElementById("nº_unidades").value);
+
+            const url = `jacko_02.html?disco=${disco}&nº_unidades=${unidades}`;
+
+            window.location.href = url;
+        });
+        document.getElementById("boton3").addEventListener("click", function() {
+    
+            const año_publicado = encodeURIComponent(document.getElementById("año_publicado").value);
+            const fecha_titulo = encodeURIComponent(document.getElementById("fecha_titulo").value);
+
+            
+            const url = `jacko_03.html?año_publicado=${año_publicado}&fecha_titulo=${fecha_titulo}`;
+
+            
+            window.location.href = url;
+        });
+    </script>
+</body>
+</html>

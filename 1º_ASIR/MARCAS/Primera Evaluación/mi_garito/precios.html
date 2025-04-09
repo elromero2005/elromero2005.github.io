@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
+
+    <style>
+        .navbar-nav .nav-link.active {
+            text-decoration: underline; /* Subrayar el texto */
+            text-decoration-color: black; /* Cambiar el color del subrayado a negro */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid d-flex align-items-center">
+            <!-- Logo y texto a la izquierda -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/logo.jfif" alt="Logo" width="100" height="100" class="d-inline-block align-text-top rounded-circle">
+                <span class="h1 ms-2">Discotecas Romero</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="restaurante.html">Restaurante</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="eventos.html">Eventos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="horarios.html">Horarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Precios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="acerca_nosotros.html">Sobre Nosotros</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Precios de Discoteca</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Adultos</th>
+                    <th scope="col">Menores</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Entrada General</td>
+                    <td>20€</td>
+                    <td>10€</td>
+                </tr>
+                <tr>
+                    <td>Entrada VIP</td>
+                    <td>50€</td>
+                    <td>25€</td>
+                </tr>
+                <tr>
+                    <td>Cerveza</td>
+                    <td>2,5€</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Cócteles</td>
+                    <td>5€</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Botella de Vino</td>
+                    <td>30€</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Paquete Todo Incluido de Cumpleaños/Empresa</td>
+                    <td>200€ para 4 pers.</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="text-center mb-4">Precios del Restaurante</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hamburguesa</td>
+                    <td>12€</td>
+                </tr>
+                <tr>
+                    <td>Ensalada César</td>
+                    <td>8€</td>
+                </tr>
+                <tr>
+                    <td>Pasta Alfredo</td>
+                    <td>15€</td>
+                </tr>
+                <tr>
+                    <td>Pizza Margarita</td>
+                    <td>10€</td>
+                </tr>
+                <tr>
+                    <td>Bocadillo Frio</td>
+                    <td>5€</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="text-center mb-4">Menu del día</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Entrantes</th>
+                    <th scope="col">Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nachos con Queso</td>
+                    <td>7€</td>
+                </tr>
+                <tr>
+                    <td>Ensalada César</td>
+                    <td>8€</td>
+                </tr>
+                <tr>
+                    <td>Alitas de Pollo</td>
+                    <td>9€</td>
+                </tr>
+                <tr>
+                    <td>Bruschetta</td>
+                    <td>8€</td>
+                </tr>
+            </tbody>
+            <thead>
+                <tr>
+                    <th scope="col">Platos Principales</th>
+                    <th scope="col">Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Filete a la Parrilla</td>
+                    <td>25€</td>
+                </tr>
+                <tr>
+                    <td>Salmón al Horno</td>
+                    <td>14€</td>
+                </tr>
+                <tr>
+                    <td>Tacos de Pescado</td>
+                    <td>14€</td>
+                </tr>
+            </tbody>
+            <thead>
+                <tr>
+                    <th scope="col">Bebidas</th>
+                    <th scope="col">Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Refrescos</td>
+                    <td>2€</td>
+                </tr>
+                <tr>
+                    <td>Agua Mineral</td>
+                    <td>3€</td>
+                </tr>
+                <tr>
+                    <td>Cerveza Artesanal</td>
+                    <td>6€</td>
+                </tr>
+                <tr>
+                    <td>Botella de Vino de la casa</td>
+                    <td>20€</td>
+                </tr>
+            </tbody>
+            <thead>
+                <tr>
+                    <th scope="col">Postres</th>
+                    <th scope="col">Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Postre del Día</td>
+                    <td>Incluido</td>
+                </tr>
+                <tr>
+                    <td>Natillas</td>
+                    <td>2€</td>
+                </tr>
+                <tr>
+                    <td>Fruta</td>
+                    <td>3€</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <footer class="bg-light text-center py-4">
+        <p>&copy; 2023 Discotecas Romero. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

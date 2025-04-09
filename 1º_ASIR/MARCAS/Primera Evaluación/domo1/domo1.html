@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            font-family: Arial;
+            background-color: grey;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Introduce un numero (1-100)</h1>
+    <input type="number" id="miInput"/>
+    <button id="miBoton">Dame!</button>
+    <p id="miParrafo"></p>
+    <p id="miParrafo2"></p>
+
+    <script>
+        // se genera un número aletorio entre 1 y 100
+        const numeroOculto = Math.floor((Math.random() * 100) + 1);
+
+        // intentos
+        let intentos = 0;
+
+        // instancio los necesarios del DOM (html)
+        const constMiParrafo = document.getElementById("miParrafo");
+        const constMiParrafo2 = document.getElementById("miParrafo2");
+        const constMiBoton = document.getElementById("miBoton");
+        const constMiInput = document.getElementById("miInput");
+
+        constMiBoton.addEventListener('click', () => {
+            const numeroInput = parseInt(constMiInput.value, 10);
+            
+            // Incrementar el número de intentos
+            intentos++;
+
+            if (numeroOculto == numeroInput) {
+
+                // Determinar el mensaje según el número de intentos
+                if (intentos >= 13) {
+                    constMiParrafo2.textContent = "eres malillo";
+                } else if (intentos >= 9 && intentos <= 12) {
+                    constMiParrafo2.textContent = "eres del montón";
+                } else if (intentos >= 4 && intentos <= 8) {
+                    constMiParrafo2.textContent = "eres grande";
+                } else {
+                    constMiParrafo2.textContent = "eres Dios";
+                }
+
+                constMiParrafo.textContent = "Enhorabuena!!!";
+                constMiParrafo.style.color = "green";
+            } else if (Math.abs(numeroOculto - numeroInput) < 3) {
+                constMiParrafo.textContent = "QUEMANDO!!!";
+                constMiParrafo.style.color = "red";
+            } else if (Math.abs(numeroOculto - numeroInput) < 8) {
+                constMiParrafo.textContent = "MUY CALIENTE!!!";
+                constMiParrafo.style.color = "orange";
+            } else if (Math.abs(numeroOculto - numeroInput) < 13) {
+                constMiParrafo.textContent = "CALIENTE!!!";
+                constMiParrafo.style.color = "yellow";
+            } else if (Math.abs(numeroOculto - numeroInput) < 18) {
+                constMiParrafo.textContent = "TEMPLAOOO!!!";
+                constMiParrafo.style.color = "black";
+            } else if (Math.abs(numeroOculto - numeroInput) < 23) {
+                constMiParrafo.textContent = "FRESQUIBIRIS!!!";
+                constMiParrafo.style.color = "blue";
+            } else {
+                constMiParrafo.textContent = "FRIO HELAO!!!";
+                constMiParrafo.style.color = "violet";
+            }
+        });
+    </script>
+
+</body>
+</html>
