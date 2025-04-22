@@ -78,4 +78,14 @@ if (maxSuma === sumaJugador1) {
 console.log("El jugador con la suma más alta es: " + jugadorGanador + " con una suma de " + maxSuma);
 
 
+function menor15(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o)
+{
+    let m1 =menor4(a,b,c,d);
+    let m2 =menor4(e,f,g,h);
+    let m3 =menor4(i,j,k,l);
+    let m4 =menor3(m,n,o);
 
+    return menor4(m1,m2,m3,m4);
+}
+
+console.log(menor15(1,2,3,4,5,6,7,8,9,10,-11,12,13,14,15));

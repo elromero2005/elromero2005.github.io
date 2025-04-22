@@ -1,0 +1,6 @@
+html {
+    background-image: url('images/fondo.jfif');
+    background-size: cover; /* Ajusta la imagen para que cubra toda el área */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen */
+}
