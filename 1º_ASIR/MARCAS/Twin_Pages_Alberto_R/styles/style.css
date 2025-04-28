@@ -11,25 +11,34 @@ html {
 
 .menu-container {
     background-color: #e3b983;
-    margin: auto;
+    width: 60%;
+    max-width: 500px;
     padding: 20px;
-    border-radius: 10px;
-    width: 90%;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+    position: absolute; /* Necesario para centrar el elemento */
+    top: 50%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta el posicionamiento */
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     font-family: monospace;
     font-size: 50px;
+    margin-top: 0;
 }
 
 h2 {
     font-family: "Great Vibes", cursive;
     font-style: italic;
-    font-size: 1.5rem;
+    font-size: 14px;
     margin-bottom: 20px;
-    font-size: small;
+}
+
+h3 {
+    font-family: monospace;
+    font-size: 30px;
+    margin-top: 20px;
 }
 
 .menu-section h3 {
@@ -48,24 +57,70 @@ ul li {
 }
 
 p {
-    font-style: italic;
+    font-style: monospace;
     font-size: 1rem;
+}
+
+#productos {
+    width: 100%; /* Ajusta el ancho según sea necesario */
+    margin: auto;
+}
+
+.producto {
+    display: flex; /* Activa Flexbox */
+    justify-content: space-between; /* Separa los elementos */
+}
+
+.nombre {
+    text-align: left; /* Por claridad, aunque es el predeterminado */
+}
+
+.precio {
+    text-align: right;
+}
+
+img {
+    width: 30px;
+    height: auto; /* Mantiene la proporción */
+    max-width: 100%; /* Para hacerlo responsivo */
+    display: block; /* Asegura un buen flujo en el diseño */
+    margin: auto; /* Centrar la imagen */
+}
+hr {
+    border: 3px solid #8B0000
+}
+
+a {
+    color: #d8b91f; /* Color inicial del enlace */
+}
+
+a:hover {
+    color: rgb(240, 47, 47); /* Color al colocar el cursor encima (rojo claro) */
+}
+
+a:visited {
+    color: black; /* Color después de que se haya usado */
+}
+
+.Seta {
+    margin-bottom: 0;
 }
 
 @media (max-width: 768px) {
     .menu-container {
-        padding: 10px;
+        padding: 20px;
+        width: 60%;
     }
 
     h1 {
-        font-size: 1.5rem;
+        font-size: 50px;
     }
 
     h2 {
-        font-size: 1.2rem;
+        font-size: 14px;
     }
 
     ul li {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 }
