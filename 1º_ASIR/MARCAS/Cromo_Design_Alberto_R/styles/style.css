@@ -1,0 +1,58 @@
+body {
+    font-family: 'Garamond', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #2e2e2e;
+}
+.card {
+    width: 300px;
+    background: #c7aa75;
+    border: 4px solid black;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+.card img {
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+.stars {
+    color: gold;
+    font-size: 18px;
+}
+.type {
+    background: #e5d2b8;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.description {
+    background: #f8f3e8;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: left;
+}
+.stats {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    text-align: right;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#name {
+    text-align: left;
+}
