@@ -1,20 +1,24 @@
+/* Estilos generales */
 body {
-    font-family: Arial;
+    margin: 0;
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #2e2e2e;
 }
 .card {
-    width: 400px;
-    height: 560px;
-    background: #c7aa75;
-    border: 4px solid black;
-    border-radius: 12px;
-    padding: 15px;
+    width: 90%;
+    max-width: 400px;
+    max-height: 560px;
+    background-color: #c7aa75;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
     text-align: center;
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    padding: 20px;
+    box-sizing: border-box;
 }
 img {
     width: 82%;
@@ -53,11 +57,13 @@ img {
     justify-content: space-between;
     align-items: center;
     margin-top: -10px;
+    margin-bottom: -10px;
 }
 
 .image-container {
     display: flex;
     align-items: center;
+    margin-top: -15px;
 }
 
 #name {
@@ -88,8 +94,8 @@ img {
     padding: 5px;
     font-size: 24px;
     font-weight: bold;
-    margin-top: -15px;
-    margin-bottom: -30px;
+    margin-top: -30px;
+    margin-bottom: -35px;
 }
 
 .footer-container {
@@ -108,4 +114,48 @@ img {
     text-align: right;
     display: flex;
     flex-direction: column; /* Asegura que los textos estén en vertical */
+}
+
+@media (max-width: 768px) {
+    .card {
+        padding: 15px;
+    }
+
+    .header .title {
+        font-size: 1.3rem;
+    }
+
+    .atributes .type {
+        font-size: 1rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+
+    .footer-container .text {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 10px;
+    }
+
+    .header .title {
+        font-size: 1.2rem;
+    }
+
+    .atributes .type {
+        font-size: 0.9rem;
+    }
+
+    .description {
+        font-size: 0.8rem;
+    }
+
+    .footer-container .text {
+        font-size: 0.7rem;
+    }
 }
