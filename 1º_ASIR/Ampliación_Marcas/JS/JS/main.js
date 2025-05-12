@@ -43,31 +43,55 @@ function pintarDiana() {
 
 function pintarBola() {
     if (exiteBola) { // Si la bola existe
-    ball.x = ball.x + ball.velocidad; // Mueve la bola hacia la derecha
-    ctx.fillStyle = "black";
-    ctx.beginPath(); // Inicia un nuevo camino
-    ctx.arc(ball.x + ball.w / 2, ball.y + ball.h / 2, ball.w / 2, 0, Math.PI * 2); // Dibuja un círculo
-    ctx.fill(); // Rellena el círculo con el color especificado
-    if ((exiteBola) && (ball.x > canvas.width)) { // Si la bola sale del canvas
-        exiteBola = false; // Reinicia el estado de la bola
+        ball.x = ball.x + ball.velocidad; // Mueve la bola hacia la derecha
+        ctx.fillStyle = "black";
+        ctx.beginPath(); // Inicia un nuevo camino
+        ctx.arc(ball.x + ball.w / 2, ball.y + ball.h / 2, ball.w / 2, 0, Math.PI * 2); // Dibuja un círculo
+        ctx.fill(); // Rellena el círculo con el color especificado
+        if (
+            ball.x >= diana.x + 20 &&
+            ball.x <= diana.x + 30 &&
+            ball.y >= diana.y + 20 &&
+            ball.y <= diana.y + 30
+        ){ // Si la bola colisiona con la diana
+            console.log("Has dado en la diana + 100 puntos");    
+        }
+        else if (
+            ball.x >= diana.x &&
+            ball.x <= diana.x + diana.w &&
+            ball.y >= diana.y &&
+            ball.y <= diana.y + diana.h
+        ) { // Si la bola colisiona con la diana
+            console.log("Has dado en la diana + 50 puntos");
+        }
+        else if (ball.x > canvas.width) { // Si la bola sale del canvas
+            exiteBola = false; // Reinicia el estado de la bola
+        }
     }
-}
 }
 
 //Eventos
 
+// Evento para el botón
+document.getElementById('boton').addEventListener('click', () => {
+    if (!exiteBola) { // Solo crea la bola si no existe
+        exiteBola = true;
+        ball.x = player.x + player.w / 2 - ball.w / 2; // Posición inicial de la bola (centro del jugador)
+        ball.y = player.y + player.h / 2 - ball.h / 2; // Posición inicial de la bola (centro vertical del jugador)
+        ball.velocidad = 5; // Velocidad de la bola
+    }
+});
+
 document.addEventListener('keydown', (e) => {
     if (e.key === "ArrowUp") {
         player.y = player.y - player.paso;
-    }
-    else if (e.key === "ArrowDown") {
+    } else if (e.key === "ArrowDown") {
         player.y = player.y + player.paso;
-    }
-    else if (e.code === 'Space') { // Si se presiona la tecla de espacio
+    } else if (e.code === 'Space') { // Si se presiona la tecla de espacio
         if (!exiteBola) { // Solo crea la bola si no existe
             exiteBola = true;
-            ball.x = player.x + player.w - ball.w / 2; // Posición inicial de la bola (centro del jugador)
-            ball.y = player.y + player.h / 2 - ball.w / 2; // Posición inicial de la bola (arriba del jugador)
+            ball.x = player.x + player.w / 2 - ball.w / 2; // Posición inicial de la bola (centro del jugador)
+            ball.y = player.y + player.h / 2 - ball.h / 2; // Posición inicial de la bola (centro vertical del jugador)
             ball.velocidad = 5; // Velocidad de la bola
         }
     }
