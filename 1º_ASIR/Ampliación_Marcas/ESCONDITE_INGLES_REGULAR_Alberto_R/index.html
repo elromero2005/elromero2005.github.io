@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Camino</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Juego de Camino</h1>
+        
+        <div class="zona-juego">
+            <!-- Columnas de jugadores -->
+            <div class="columnas-jugadores">
+                <!-- Columna Jugador 1 -->
+                <div class="columna">
+                    <div class="encabezado-columna">
+                        <div class="indicador-jugador jugador1">1</div>
+                        <div class="estado-jugador">
+                            <span>Tiene corazón: <span id="corazon1">No</span></span>
+                        </div>
+                    </div>
+                    <div class="tablero-columna" id="tablero1"></div>
+                    <div class="botones-accion">
+                        <button onclick="elegirAccion(1, 'andar')">Andar</button>
+                        <button onclick="elegirAccion(1, 'pararse')">Pararse</button>
+                    </div>
+                </div>
+
+                <!-- Columna Jugador 2 -->
+                <div class="columna">
+                    <div class="encabezado-columna">
+                        <div class="indicador-jugador jugador2">2</div>
+                        <div class="estado-jugador">
+                            <span>Tiene corazón: <span id="corazon2">No</span></span>
+                        </div>
+                    </div>
+                    <div class="tablero-columna" id="tablero2"></div>
+                    <div class="botones-accion">
+                        <button onclick="elegirAccion(2, 'andar')">Andar</button>
+                        <button onclick="elegirAccion(2, 'pararse')">Pararse</button>
+                    </div>
+                </div>
+
+                <!-- Columna Jugador 3 -->
+                <div class="columna">
+                    <div class="encabezado-columna">
+                        <div class="indicador-jugador jugador3">3</div>
+                        <div class="estado-jugador">
+                            <span>Tiene corazón: <span id="corazon3">No</span></span>
+                        </div>
+                    </div>
+                    <div class="tablero-columna" id="tablero3"></div>
+                    <div class="botones-accion">
+                        <button onclick="elegirAccion(3, 'andar')">Andar</button>
+                        <button onclick="elegirAccion(3, 'pararse')">Pararse</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Información del juego -->
+            <div class="informacion-juego">
+                <div class="estado-juego">
+                    <p>Ronda: <span id="ronda">1</span></p>
+                    <p id="mensaje-ganador"></p>
+                </div>
+
+                <!-- Dados sacados -->
+                <div class="dados-sacados">
+                    <h2>Dados Sacados</h2>
+                    <div id="area-dados" class="area-dados"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botón para reiniciar -->
+        <div class="boton-reiniciar">
+            <button id="reiniciar-boton" onclick="reiniciarJuego()" class="oculto">Jugar de nuevo</button>
+        </div>
+    </div>
+    
+    <script src="JS/main.js"></script>
+</body>
+</html>
