@@ -144,7 +144,7 @@ h1 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #4CAF50;
+    background-color: black;
     color: white;
     transition: background-color 0.3s;
     flex: 1;
@@ -152,7 +152,7 @@ h1 {
 }
 
 .botones-accion button:hover {
-    background-color: #45a049;
+    background-color: red;
 }
 
 .informacion-juego {
