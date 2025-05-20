@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="my.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="general">
+        <h1>
+            Floating goldfinch
+        </h1>
+        <p>This question desinate the look and feel of diferent types of components when the current threme</p>
+        <label for="nombre1">Name:</label>
+        <input type="text" id="nombre1" class="input">
+
+        <label for="nombre2">Name:</label>
+        <input type="text" id="nombre2" class="input">   
+
+        <div class="flex-container">
+            <div class="field">
+                <label for="nombre3">Name:</label>
+                <input type="text" id="nombre3" class="input">
+            </div>
+            <div class="field">
+                <label for="nombre4">Name:</label>
+                <input type="text" id="nombre4" class="input">
+            </div>
+        </div>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" class="input">
+
+        <label for="date2">Date:</label>
+        <input type="date" id="date2" class="input">
+
+        <div class="icono">
+            <img src="img/a.png" alt="A">
+            <p>Search Engine</p>
+        </div>
+        <div class="icono">
+            <img src="img/b.png" alt="B">
+            <p>Social Media</p>
+        </div>
+        <div class="icono">
+            <img src="img/c.png" alt="C">
+            <p>Other Website</p>
+        </div>
+        <div class="icono">
+            <img src="img/d.png" alt="D">
+            <p>Of Mouth</p>
+        </div>
+        <div class="cuadro-estrellas">
+        <p class="extra-text">Cuantas estrellas nos das</p>
+        <img src="img/estrellas.png" class="estrellas">
+        </div>
+        <div class="cuadro-pajaro">
+            <img src="img/pajaro.png" alt="Pajaro" class="pajaro">
+        </div>
+        
+        
+        <p>Likely are you to recommend forn to a friend</p>
+        <button class="boton">1</button>
+        <button class="boton">2</button>
+        <button id="submitButton" class="boton3">3</button>
+        <button class="boton">4</button>
+        <button class="boton">5</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.getElementById('submitButton').addEventListener('click', function () {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Warning',
+                text: 'Serás redirigido a la segunda página.',
+            }).then(() => {
+                // Recopilar datos del formulario
+                const params = new URLSearchParams();
+                params.append('nombre1', document.getElementById('nombre1').value);
+                params.append('nombre2', document.getElementById('nombre2').value);
+                params.append('nombre3', document.getElementById('nombre3').value);
+                params.append('nombre4', document.getElementById('nombre4').value);
+                params.append('date', document.getElementById('date').value);
+                params.append('date2', document.getElementById('date2').value);
+
+                // Redirigir a resultado.html con los datos
+                window.location.href = `resultado.html?${params.toString()}`;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado</title>
+    <link rel="stylesheet" href="my.css">
+</head>
+<body>
+    <h1>Datos del Formulario</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Campo</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-datos"></tbody>
+    </table>
+    <div id="links"></div>
+
+    <script>
+        // Obtener los datos de la URL
+        const params = new URLSearchParams(window.location.search);
+        const datos = {
+            nombre1: params.get('nombre1'),
+            nombre2: params.get('nombre2'),
+            nombre3: params.get('nombre3'),
+            nombre4: params.get('nombre4'),
+            date1: params.get('date'),
+            date2: params.get('date2'),
+        };
+
+        const tabla = document.getElementById('tabla-datos');
+        for (let i = 1; i <= 4; i++) {
+            const row = document.createElement('tr');
+            row.innerHTML = `<td>Nombre ${i}</td><td>${datos[`nombre${i}`]}</td>`;
+            tabla.appendChild(row);
+        }
+
+        const linksDiv = document.getElementById('links');
+        for (let i = 1; i <= 2; i++) {
+            const link = document.createElement('a');
+            link.href = datos[`date${i}`];
+            link.textContent = datos[`date${i}`];
+            link.target = '_blank';
+            linksDiv.appendChild(link);
+            const espacio = document.createTextNode('  '); // Espacio horizontal
+            linksDiv.appendChild(espacio);
+        }
+    </script>
+</body>
+</html>

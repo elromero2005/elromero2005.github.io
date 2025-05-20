@@ -1,0 +1,136 @@
+html{
+    background-color: green;
+}
+.general {
+    display: block;
+    background-color: #b8ffcb;
+    padding: 0 20px; 
+    margin: 20px auto; 
+    box-sizing: border-box; 
+}
+h1 {
+    font-family: 'VT323', monospace;
+    font-size: 3.5em;
+}
+p{
+    font-family: monospace;
+    font-size: 1em;
+}
+label {
+    display: block;
+    font-family: monospace;
+    margin-bottom: 5px;
+    font-size: 1em; 
+}
+.flex-container {
+    display: flex;
+    gap: 20px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    box-sizing: border-box; 
+}
+.input {
+    width: 100%; 
+    box-sizing: border-box; 
+    padding: 10px; 
+    margin-bottom: 15px; 
+    border: 1px solid #ddd;
+    border-radius: 5px; 
+}
+.boton, .boton3 {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 12%; 
+    display: inline-block; 
+    margin: 0; 
+}
+.boton3 {
+    background-color: black;
+}
+.icono {
+    display: flex; 
+    align-items: center;
+    gap: 10px; 
+    margin-bottom: 15px; 
+    height: 40px;
+    width: 200px;
+    background-color: white;
+    position: relative; 
+}
+
+.extra-text {
+    top: 0;
+    left: 100%; 
+    margin-left: 250px;
+    font-size: 14px; 
+}
+img{
+    margin-left: 10px;
+    width: 20px;
+    height: auto;
+}
+
+.icono p {
+    margin: 0; 
+    font-size: 16px; 
+}
+.estrellas {
+    width: 200px;
+    margin-left: 250px;
+}
+/* Estilo para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+    font-family: monospace;
+}
+
+table thead tr {
+    background-color: #b8ffcb;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+table th, table td {
+    border: 2px solid black;
+    padding: 12px 15px;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #b8ffcb;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #b8ffcb;
+}
+
+table tbody tr:hover {
+    background-color: #b8ffcb;
+    cursor: pointer;
+}
+
+.cuadro-estrellas {
+    margin-top: -100px;
+}
+.pajaro{
+    width: 350px;
+}
+.cuadro-pajaro {
+    margin-top: -250px;
+    float: right;
+}
+#links{
+    font-family: monospace;
+    font-size: 20px;
+}
