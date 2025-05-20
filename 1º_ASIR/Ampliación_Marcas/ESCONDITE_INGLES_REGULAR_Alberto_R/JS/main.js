@@ -97,6 +97,7 @@ function sacarDado() {
                 const nuevosDadosNegros = [...estadoJuego.dadosNegrosAcumulados, dadoSeleccionado];
                 const total = tirarDado(nuevosDadosNegros);
                 const nuevaPosicion = Math.min(9, jugador.posicion + total);
+                document.getElementById(`dado-sacado${jugador.id}`).textContent = total;
                 return { ...jugador, posicion: nuevaPosicion };
             } else if (colorDado === 'rojo') {
                 if (jugador.tieneCorazon) {
@@ -105,6 +106,7 @@ function sacarDado() {
                     const dadosActualizados = [...estadoJuego.dadosNegrosAcumulados, dadoSeleccionado];
                     const total = tirarDado(dadosActualizados);
                     const nuevaPosicion = Math.max(0, jugador.posicion - total);
+                    document.getElementById(`dado-sacado${jugador.id}`).textContent = total;
                     return { ...jugador, posicion: nuevaPosicion };
                 }
             }
