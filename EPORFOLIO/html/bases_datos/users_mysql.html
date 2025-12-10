@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>USERS_MYSQL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../../styles/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="nav-item">
+                    <a href="../../index.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../iaw.html">IAW</a>
+                    <ul class="submenu">
+                        <li><a href="../iaw/extensiones_iaw.html">EXTENSIONES_VSC_IAW_RA1</a></li>
+                        <li><a href="../iaw/da2.html">DA2_RA15</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../seguridad.html">SECURITY</a>
+                    <ul class="submenu">
+                        <li><a href="../seguridad/attack_simulation.html">ATTACK_SIMULATION_RA12</a></li>
+                        <li><a href="../seguridad/coman2_linux.html">COMAN2_LINUX_RA1</a></li>
+                        <li><a href="../seguridad/malwares.html">MALWARES_RA123</a></li>
+                        <li><a href="../seguridad/exploit_boom.html">EXPLOIT_BOOM_RA123</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../bases_datos.html">DATABASES</a>
+                    <ul class="submenu">
+                        <li><a href="dba_mysql.html">DBA_MYSQL_RA12</a></li>
+                        <li><a href="#">USERS_MYSQL_RA23</a></li>
+                        <li><a href="dba_sqlite.html">DBA_SQLITE_RA12</a></li>
+                        <li><a href="postgres_dba.html">POSTGRES_DBA_RA34</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../python.html">PYTHON</a>
+                    <ul class="submenu">
+                        <li><a href="../python/extensiones_python.html">EXTENSIONES_VSC_PYTHON_RA1</a></li>
+                        <li><a href="../python/navarredonda_python.html">NAVARREDONDA_PYTHON_RA125</a></li>
+                        <li><a href="../python/fastest_turtle.html">FASTEST_TURTLE_RA12345</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <h1>USERS_MYSQL_RA23</h1>
+        <h3>1. A mini-summary of what to do in the challenge:</h3>
+        <p>The challenge involved managing users and privileges in a MySQL database. The main tasks included creating users (such as 'Bego', 'Mati', 'Mifli', and 'Crispula') with specific passwords and defining their allowed connection hosts (localhost or a specific domain like 'lasalleinstitucion.es'). Subsequently, we practiced granular permission assignment using GRANT statements to allow specific actions (SELECT, UPDATE, DELETE) on specific tables, as well as revoking these permissions with REVOKE and managing security by changing passwords and deleting users.</p>
+        
+        <h3>2. Two complex concepts that you have learned:</h3>
+        <div>
+            <ul>
+                <li><strong>Privilege Management (GRANT/REVOKE):</strong> I learned how MySQL allows detailed control over security, enabling permissions to be granted globally or per table. I understood how to use <code>GRANT</code> to assign permissions (including the ability for a user to grant permissions to others with <code>WITH GRANT OPTION</code>) and <code>REVOKE</code> to remove them.</li>
+                <li><strong>Authentication and Host:</strong> I understood the importance of the 'user'@'host' combination. The same username can have different permissions or passwords depending on whether they connect from <code>localhost</code> or a remote domain, which we observed when trying to connect with the user 'Crispula' from a non-permitted location.</li>
+            </ul>
+        </div> 
+        
+        <h3>3. How have you felt:</h3>
+        <p>I felt competent while performing the practice. At first, the permission syntax seemed dense, but by running connection tests and seeing how actions were denied or allowed based on the configuration, I understood the underlying security logic.</p>
+        
+        <h3>4. What would you improve about your solutions:</h3>
+        <p>I would improve the preliminary check of connection environments. In one of the exercises (the 'Crispula' case), I tried to access from localhost when the user was restricted to the 'lasalleinstitucion.es' domain, which generated an access error. I would also be more careful when modifying system tables directly (the <code>user</code> table), as I learned that changing the password directly without using the encryption function causes authentication errors.</p>
+        
+        <h3>5. Technical words in English for the glossary:</h3>
+            <ul>
+                <li><strong>GRANT:</strong> SQL statement used to provide access or privileges on database objects to users.</li>
+                <li><strong>REVOKE:</strong> SQL command used to remove access rights or privileges previously granted to a user.</li>
+                <li><strong>FLUSH PRIVILEGES:</strong> Command that reloads the grant tables in the MySQL server memory; it is necessary when modifying permission tables directly (such as INSERT or UPDATE in the <code>mysql.user</code> table).</li>
+                <li><strong>Localhost:</strong> Standard hostname referring to the loopback IP address (127.0.0.1), indicating that the connection is made from the same machine.</li>
+                <li><strong>DCL (Data Control Language):</strong> A syntax similar to a computer programming language used to control access to data stored in a database (Authorization).</li>
+            </ul>
+            
+        <h3>6. What grade would you give the practice statement and why (0 to 10), and what would you improve:</h3>
+        <p>I would give the assignment a 9 out of 10. The practice covers the fundamentals of database security very well, although I would add an exercise on recovering forgotten passwords to complete the training.</p>
+    </div>
+    <footer>
+        <p>All rights reserved ©</p>
+    </footer>
+</body>
+</html>

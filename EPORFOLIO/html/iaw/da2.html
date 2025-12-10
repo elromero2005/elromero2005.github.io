@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DA2 - Dados</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../../styles/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="nav-item">
+                    <a href="../../index.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../iaw.html">IAW</a>
+                    <ul class="submenu">
+                        <li><a href="extensiones_iaw.html">EXTENSIONES_VSC_IAW_RA1</a></li>
+                        <li><a href="#">DA2_RA15</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../seguridad.html">SECURITY</a>
+                    <ul class="submenu">
+                        <li><a href="../seguridad/attack_simulation.html">ATTACK_SIMULATION_RA12</a></li>
+                        <li><a href="../seguridad/coman2_linux.html">COMAN2_LINUX_RA1</a></li>
+                        <li><a href="../seguridad/malwares.html">MALWARES_RA123</a></li>
+                        <li><a href="../seguridad/exploit_boom.html">EXPLOIT_BOOM_RA123</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../bases_datos.html">DATABASES</a>
+                    <ul class="submenu">
+                        <li><a href="../bases_datos/dba_mysql.html">DBA_MYSQL_RA12</a></li>
+                        <li><a href="../bases_datos/users_mysql.html">USERS_MYSQL_RA23</a></li>
+                        <li><a href="../bases_datos/dba_sqlite.html">DBA_SQLITE_RA12</a></li>
+                        <li><a href="../bases_datos/postgres_dba.html">POSTGRES_DBA_RA34</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../python.html">PYTHON</a>
+                    <ul class="submenu">
+                        <li><a href="../python/extensiones_python.html">EXTENSIONES_VSC_PYTHON_RA1</a></li>
+                        <li><a href="../python/navarredonda_python.html">NAVARREDONDA_PYTHON_RA125</a></li>
+                        <li><a href="../python/fastest_turtle.html">FASTEST_TURTLE_RA12345</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <h1>DA2_RA15</h1>
+        
+        <h3>1. A mini-summary of what to do in the challenge:</h3>
+        <p>The challenge consisted of developing a dynamic web application using PHP to simulate a dice game. The project involves two main files: an initial HTML form (<code>da01.php</code>) where the user selects the number of dice (1, 2, or 3), the number of faces per die (4, 6, 8, 10, 12, 20), and sets the opponent's score. The second file (<code>da02.php</code>) processes this data via the POST method, generates random numbers for the dice using <code>random_int()</code>, calculates the total sum, and determines the winner by comparing the result against the opponent's score.</p>
+
+        <h3>2. Two complex concepts that you have learned:</h3>
+        <div>
+            <ul>
+                <li><strong>Server-Side Logic with PHP Forms:</strong> I learned how to collect user input using the global <code>$_POST</code> array and cast variables to integers (<code>(int)$_POST[...]</code>) to perform mathematical operations safely on the server side.</li>
+                <li><strong>Randomness and Conditionals:</strong> I understood how to generate cryptographically secure random integers using the <code>random_int()</code> function and how to use nested <code>if/elseif</code> structures to handle different game scenarios based on the user's configuration.</li>
+            </ul>
+        </div> 
+
+        <h3>3. How have you felt:</h3>
+        <p>I felt satisfied seeing the logic work correctly and being able to create a functional interactive game. It was interesting to see how backend logic connects with the frontend interface.</p>
+
+        <h3>4. What would you improve about your solutions:</h3>
+        <p>The code in <code>da02.php</code> is quite repetitive, using many <code>if/elseif</code> blocks for every combination of dice and faces. I would improve this by using <strong>Loops (for/while)</strong> to generate the dice rolls dynamically. This would drastically reduce the number of lines of code and make the application scalable to any number of dice without writing new conditions manually.</p>
+
+        <h3>5. Technical words in English for the glossary:</h3>
+            <ul>
+                <li><strong>Superglobal:</strong> Built-in variables in PHP (like <code>$_POST</code>) that are always available in all scopes.</li>
+                <li><strong>Casting:</strong> The process of converting a variable from one data type to another, for example, converting a string input to an integer.</li>
+                <li><strong>Backend:</strong> The part of the website that runs on the server (PHP in this case) and is not visible to the user.</li>
+                <li><strong>Integer:</strong> A whole number (not a fraction) that can be positive, negative, or zero.</li>
+                <li><strong>Request Method:</strong> The method used to send data to the server, such as POST or GET.</li>
+            </ul>
+
+        <h3>6. What grade would you give the practice statement and why (0 to 10), and what would you improve:</h3>
+        <p>I would give the assignment an 8 out of 10. It is a good introduction to PHP forms and logic, but it could include instructions to use loops to encourage cleaner code practices from the start.</p>
+    </div>
+    <footer>
+        <p>All rights reserved ©</p>
+    </footer>
+</body>
+</html>

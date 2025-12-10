@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Comandos Linux</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../../styles/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="nav-item">
+                    <a href="../../index.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../iaw.html">IAW</a>
+                    <ul class="submenu">
+                        <li><a href="../iaw/extensiones_iaw.html">EXTENSIONES_VSC_IAW_RA1</a></li>
+                        <li><a href="../iaw/da2.html">DA2_RA15</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../seguridad.html">SECURITY</a>
+                    <ul class="submenu">
+                        <li><a href="attack_simulation.html">ATTACK_SIMULATION_RA12</a></li>
+                        <li><a href="#">COMAN2_LINUX_RA1</a></li>
+                        <li><a href="malwares.html">MALWARES_RA123</a></li>
+                        <li><a href="exploit_boom.html">EXPLOIT_BOOM_RA123</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../bases_datos.html">DATABASES</a>
+                    <ul class="submenu">
+                        <li><a href="../bases_datos/dba_mysql.html">DBA_MYSQL_RA12</a></li>
+                        <li><a href="../bases_datos/users_mysql.html">USERS_MYSQL_RA23</a></li>
+                        <li><a href="../bases_datos/dba_sqlite.html">DBA_SQLITE_RA12</a></li>
+                        <li><a href="../bases_datos/postgres_dba.html">POSTGRES_DBA_RA34</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../python.html">PYTHON</a>
+                    <ul class="submenu">
+                        <li><a href="../python/extensiones_python.html">EXTENSIONES_VSC_PYTHON_RA1</a></li>
+                        <li><a href="../python/navarredonda_python.html">NAVARREDONDA_PYTHON_RA125</a></li>
+                        <li><a href="../python/fastest_turtle.html">FASTEST_TURTLE_RA12345</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <h1>COMAN2_LINUX_RA1</h1>
+        
+        <h3>1. A mini-summary of what to do in the challenge:</h3>
+        <p>This practice focused on advanced user and file management in Linux. The first phase involved creating users and groups, assigning specific permissions, and working with special permission bits like <strong>SGID</strong> (to inherit group ownership) and <strong>Sticky Bit</strong> (to protect files in shared directories). We also configured default file permissions using <strong>Umask</strong>. The second phase focused on information retrieval and file searching using powerful command-line tools like <code>grep</code>, <code>find</code>, and <code>locate</code>.</p>
+
+        <h3>2. Two complex concepts that you have learned:</h3>
+        <div>
+            <ul>
+                <li><strong>Special Permissions (SGID & Sticky Bit):</strong> I learned that standard Read/Write/Execute permissions are not enough for collaboration. <strong>SGID</strong> ensures that new files created in a directory belong to the directory's group (enabling team access), while the <strong>Sticky Bit</strong> prevents users from deleting each other's files in shared folders like <code>/tmp</code>.</li>
+                <li><strong>Umask Configuration:</strong> I understood how the <code>umask</code> value acts as a filter for default permissions. It subtracts permissions from the system default (666 for files, 777 for directories), allowing administrators to enforce a baseline security policy for new files automatically.</li>
+            </ul>
+        </div> 
+
+        <h3>3. How have you felt:</h3>
+        <p>I felt very competent managing the system via the terminal. Understanding how permissions affect security and collaboration gave me a clearer view of Linux system administration. The search commands section was also very useful for navigating the file system efficiently.</p>
+
+        <h3>4. What would you improve about your solutions:</h3>
+        <p>While I executed the commands manually, I would improve the solution by creating <strong>Bash scripts</strong> to automate the user and directory creation process. This would reduce the chance of human error and make the setup reproducible. Additionally, I would explore using <strong>ACLs (Access Control Lists)</strong> for more granular permission settings beyond the standard Owner/Group/Others model.</p>
+
+        <h3>5. Technical words in English for the glossary:</h3>
+            <ul>
+                <li><strong>SGID (Set Group ID):</strong> A special permission bit that allows files created within a directory to inherit the group ownership of that directory.</li>
+                <li><strong>Sticky Bit:</strong> A permission bit set on a directory that restricts file deletion; only the file's owner, the directory's owner, or root can delete the file.</li>
+                <li><strong>Grep:</strong> A command-line utility for searching plain-text data sets for lines that match a regular expression.</li>
+                <li><strong>Umask:</strong> A command that determines the settings of a mask that controls which file permissions are set for files and directories when they are created.</li>
+                <li><strong>Wildcard:</strong> A character (like *) that can be used to substitute for any other character or characters in a string, useful in commands like <code>find</code> or <code>locate</code>.</li>
+            </ul>
+
+        <h3>6. What grade would you give the practice statement and why (0 to 10), and what would you improve:</h3>
+        <p>I would give this practice a 9 out of 10. It covers essential system administration tasks. To make it perfect, I would add a section on troubleshooting permission errors, as that is a common real-world scenario.</p>
+    </div>
+    <footer>
+        <p>All rights reserved ©</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DBA MySQL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../../styles/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="nav-item">
+                    <a href="../../index.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../iaw.html">IAW</a>
+                    <ul class="submenu">
+                        <li><a href="../iaw/extensiones_iaw.html">EXTENSIONES_VSC_IAW_RA1</a></li>
+                        <li><a href="../iaw/da2.html">DA2_RA15</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../seguridad.html">SECURITY</a>
+                    <ul class="submenu">
+                        <li><a href="../seguridad/attack_simulation.html">ATTACK_SIMULATION_RA12</a></li>
+                        <li><a href="../seguridad/coman2_linux.html">COMAN2_LINUX_RA1</a></li>
+                        <li><a href="../seguridad/malwares.html">MALWARES_RA123</a></li>
+                        <li><a href="../seguridad/exploit_boom.html">EXPLOIT_BOOM_RA123</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../bases_datos.html">DATABASES</a>
+                    <ul class="submenu">
+                        <li><a href="#">DBA_MYSQL_RA12</a></li>
+                        <li><a href="users_mysql.html">USERS_MYSQL_RA23</a></li>
+                        <li><a href="dba_sqlite.html">DBA_SQLITE_RA12</a></li>
+                        <li><a href="postgres_dba.html">POSTGRES_DBA_RA34</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../python.html">PYTHON</a>
+                    <ul class="submenu">
+                        <li><a href="../python/extensiones_python.html">EXTENSIONES_VSC_PYTHON_RA1</a></li>
+                        <li><a href="../python/navarredonda_python.html">NAVARREDONDA_PYTHON_RA125</a></li>
+                        <li><a href="../python/fastest_turtle.html">FASTEST_TURTLE_RA12345</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <h1>DBA_MYSQL_RA12</h1>
+        
+        <h3>1. A mini-summary of what to do in the challenge:</h3>
+        <p>The challenge consisted of acting as a Database Administrator (DBA) to configure and optimize a MySQL server for three different hypothetical companies, each with unique requirements based on technical interviews:</p>
+        <ul>
+            <li><strong>Company 1 (High Concurrency):</strong> Required handling a massive amount of simultaneous connections (>1000) with lightweight, real-time queries. We optimized <code>max_connections</code> and set <code>long_query_time</code> to 1 second.</li>
+            <li><strong>Company 2 (Big Data & Analytics):</strong> Focused on processing large volumes of historical data. The priority was memory management for heavy operations, so we increased <code>tmp_table_size</code> and allowed a higher <code>long_query_time</code> (5s) for complex aggregations.</li>
+            <li><strong>Company 3 (Balanced):</strong> A mix of requirements where we adjusted <code>innodb_flush_log_at_trx_commit</code> to 2 to balance data safety with performance speed.</li>
+        </ul>
+
+        <h3>2. Two complex concepts that you have learned:</h3>
+        <div>
+            <ul>
+                <li><strong>Memory Management (InnoDB Buffer Pool):</strong> I learned that <code>innodb_buffer_pool_size</code> is the most critical parameter for performance. It should be set to approximately 70% of the server's RAM (if dedicated) to keep the working set of data in memory and reduce slow disk I/O operations.</li>
+                <li><strong>ACID vs. Performance Trade-offs:</strong> I understood how the <code>innodb_flush_log_at_trx_commit</code> parameter controls durability. Setting it to <strong>1</strong> (default) ensures strict ACID compliance (flushing to disk on every commit), while setting it to <strong>2</strong> (as done for Company 3) improves speed by flushing to the OS cache, risking only 1 second of data loss in a crash.</li>
+            </ul>
+        </div> 
+
+        <h3>3. How have you felt:</h3>
+        <p>I felt like a true architect. Deciding the configuration not based on default settings but on specific business needs (like "Company 2 needs to process heavy historical data") made me understand the responsibility of a DBA in ensuring system stability.</p>
+
+        <h3>4. What would you improve about your solutions:</h3>
+        <p>I would implement a monitoring system (like Nagios or Prometheus) to verify if the theoretical values we calculated (like 1000 connections) hold up under real load. Adjusting parameters statically is a good start, but continuous tuning based on the <code>slow_query_log</code> analysis is essential for long-term health.</p>
+
+        <h3>5. Technical words in English for the glossary:</h3>
+            <ul>
+                <li><strong>Throughput:</strong> The amount of work (requests/queries) a system can process in a given period of time.</li>
+                <li><strong>Bottleneck:</strong> A point of congestion in a computing system (like CPU, RAM, or Disk I/O) that slows down the overall performance.</li>
+                <li><strong>Slow Query Log:</strong> A log file where MySQL records queries that take longer to execute than the time defined in <code>long_query_time</code>.</li>
+                <li><strong>Concurrency:</strong> The ability of the database to handle multiple users or processes connecting and executing queries at the same time.</li>
+                <li><strong>Commit:</strong> The final step in a transaction where all changes are saved permanently to the database.</li>
+            </ul>
+
+        <h3>6. What grade would you give the practice statement and why (0 to 10), and what would you improve:</h3>
+        <p>I would give the assignment a 9 out of 10. It was very practical to adapt configurations to different "interviews". I would improve it by including a stress-test tool (like sysbench) to see the server crash if we configure it wrong.</p>
+    </div>
+    <footer>
+        <p>All rights reserved ©</p>
+    </footer>
+</body>
+</html>

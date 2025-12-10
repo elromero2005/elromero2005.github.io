@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DBA SQLite</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../../styles/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="nav-item">
+                    <a href="../../index.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../iaw.html">IAW</a>
+                    <ul class="submenu">
+                        <li><a href="../iaw/extensiones_iaw.html">EXTENSIONES_VSC_IAW_RA1</a></li>
+                        <li><a href="../iaw/da2.html">DA2_RA15</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../seguridad.html">SECURITY</a>
+                    <ul class="submenu">
+                        <li><a href="../seguridad/attack_simulation.html">ATTACK_SIMULATION_RA12</a></li>
+                        <li><a href="../seguridad/coman2_linux.html">COMAN2_LINUX_RA1</a></li>
+                        <li><a href="../seguridad/malwares.html">MALWARES_RA123</a></li>
+                        <li><a href="../seguridad/exploit_boom.html">EXPLOIT_BOOM_RA123</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../bases_datos.html">DATABASES</a>
+                    <ul class="submenu">
+                        <li><a href="dba_mysql.html">DBA_MYSQL_RA12</a></li>
+                        <li><a href="users_mysql.html">USERS_MYSQL_RA23</a></li>
+                        <li><a href="#">DBA_SQLITE_RA12</a></li>
+                        <li><a href="postgres_dba.html">POSTGRES_DBA_RA34</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../python.html">PYTHON</a>
+                    <ul class="submenu">
+                        <li><a href="../python/extensiones_python.html">EXTENSIONES_VSC_PYTHON_RA1</a></li>
+                        <li><a href="../python/navarredonda_python.html">NAVARREDONDA_PYTHON_RA125</a></li>
+                        <li><a href="../python/fastest_turtle.html">FASTEST_TURTLE_RA12345</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <h1>DBA_SQLITE_RA12</h1>
+        
+        <h3>1. A mini-summary of what to do in the challenge:</h3>
+        <p>This practice involved the complete administration of an SQLite database named "frutitas.db". The tasks were divided into three main blocks: storage analysis and performance optimization, where I analyzed query logs to identify that the "Mandarinas" table had high read traffic (227 SELECTs) and created indexes on <code>color</code>, <code>size</code>, and <code>fecha_recogida</code> to improve speed. Secondly, I performed backup and restoration operations (`frutitas_bonitas_bonitas.db`). Finally, I automated the backup process using a Bash script scheduled with <strong>Systemd timers</strong> to run daily at 23:59:59.</p>
+
+        <h3>2. Two complex concepts that you have learned:</h3>
+        <div>
+            <ul>
+                <li><strong>Log-Based Optimization:</strong> I learned how to analyze database logs to make data-driven decisions. Instead of guessing which indexes to create, I saw that the log showed a high frequency of SELECT queries on specific columns, justifying the creation of indexes to reduce search time.</li>
+                <li><strong>Systemd Automation (Timer vs. Cron):</strong> I learned to use <code>systemd</code> units (`.service` and `.timer`) to automate tasks. Unlike a simple cron job, creating a specific service file allows for better control, logging, and dependency management for the backup script execution.</li>
+            </ul>
+        </div> 
+
+        <h3>3. How have you felt:</h3>
+        <p>I felt very professional automating the tasks. Moving from manually executing commands to setting up a "set and forget" system with Systemd made me feel like a real system administrator. Understanding the internals of SQLite, like the Journaling modes, was also very enlightening.</p>
+
+        <h3>4. What would you improve about your solutions:</h3>
+        <p>Currently, the database is protected by standard file permissions. To improve security for a production environment, I would implement <strong>SQLCipher</strong> to encrypt the database file itself. Additionally, regarding the PRAGMA settings, I would explore using <code>PRAGMA journal_mode=WAL</code> (Write-Ahead Logging) to improve concurrency, as discussed in the theoretical questions.</p>
+
+        <h3>5. Technical words in English for the glossary:</h3>
+            <ul>
+                <li><strong>PRAGMA:</strong> A special command in SQLite used to query or modify the internal operation of the library (e.g., page size, cache size).</li>
+                <li><strong>WAL (Write-Ahead Logging):</strong> A journaling mode where changes are written to a separate log file first, allowing for faster and more concurrent reads and writes.</li>
+                <li><strong>Index:</strong> A data structure (like a B-Tree) that improves the speed of data retrieval operations on a database table at the cost of additional writes and storage space.</li>
+                <li><strong>Systemd Timer:</strong> A unit configuration file in Linux used to schedule tasks, acting as a modern alternative to cron.</li>
+                <li><strong>Daemon:</strong> A background process that handles requests for services such as print spooling and file transfers, or in this case, the systemd manager handling the timers.</li>
+            </ul>
+
+        <h3>6. What grade would you give the practice statement and why (0 to 10), and what would you improve:</h3>
+        <p>I would give this practice a 9 out of 10. It perfectly covers the lifecycle of a small database: creation, optimization, and maintenance. To achieve a 10, I would include a practical exercise on recovering a corrupted database or analyzing the performance difference before and after indexing with a timer.</p>
+    </div>
+    <footer>
+        <p>All rights reserved ©</p>
+    </footer>
+</body>
+</html>

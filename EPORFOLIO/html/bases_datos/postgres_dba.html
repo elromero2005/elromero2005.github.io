@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PostgreSQL DBA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../../styles/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="nav-item">
+                    <a href="../../index.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../iaw.html">IAW</a>
+                    <ul class="submenu">
+                        <li><a href="../iaw/extensiones_iaw.html">EXTENSIONES_VSC_IAW_RA1</a></li>
+                        <li><a href="../iaw/da2.html">DA2_RA15</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../seguridad.html">SECURITY</a>
+                    <ul class="submenu">
+                        <li><a href="../seguridad/attack_simulation.html">ATTACK_SIMULATION_RA12</a></li>
+                        <li><a href="../seguridad/coman2_linux.html">COMAN2_LINUX_RA1</a></li>
+                        <li><a href="../seguridad/malwares.html">MALWARES_RA123</a></li>
+                        <li><a href="../seguridad/exploit_boom.html">EXPLOIT_BOOM_RA123</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../bases_datos.html">DATABASES</a>
+                    <ul class="submenu">
+                        <li><a href="dba_mysql.html">DBA_MYSQL_RA12</a></li>
+                        <li><a href="users_mysql.html">USERS_MYSQL_RA23</a></li>
+                        <li><a href="dba_sqlite.html">DBA_SQLITE_RA12</a></li>
+                        <li><a href="#">POSTGRES_DBA_RA34</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../python.html">PYTHON</a>
+                    <ul class="submenu">
+                        <li><a href="../python/extensiones_python.html">EXTENSIONES_VSC_PYTHON_RA1</a></li>
+                        <li><a href="../python/navarredonda_python.html">NAVARREDONDA_PYTHON_RA125</a></li>
+                        <li><a href="../python/fastest_turtle.html">FASTEST_TURTLE_RA12345</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <h1>POSTGRES_DBA_RA34</h1>
+        
+        <h3>1. A mini-summary of what to do in the challenge:</h3>
+        <p>This practice focused on advanced administration of a PostgreSQL database named "EquitacionSuave". The challenge was divided into several phases: creating the schema (tables <code>Jinetes</code> and <code>Caballos</code>) and managing users via SQL commands; setting up the <strong>pgAdmin</strong> administration tool using <strong>Docker</strong>; and configuring the server's network files (<code>postgresql.conf</code> and <code>pg_hba.conf</code>) to allow remote connections. Finally, we explored PostgreSQL's object-relational features by implementing <strong>JSON columns, Arrays, Materialized Views, and Table Inheritance</strong>.</p>
+
+        <h3>2. Two complex concepts that you have learned:</h3>
+        <div>
+            <ul>
+                <li><strong>Dockerized Administration & Network Configuration:</strong> I learned that running administrative tools like pgAdmin in containers requires specific network configurations. I had to modify <code>postgresql.conf</code> to listen on all addresses (`*`) and edit `pg_hba.conf` to accept MD5 authenticated connections from the container's subnet (e.g., `172.17.0.0/16`).</li>
+                <li><strong>Hybrid Data Types (NoSQL in SQL):</strong> I discovered PostgreSQL's power to handle unstructured data within a relational schema. Using the <code>JSON</code> type for "detalles_competencias" and <code>ARRAY</code> type for "certificaciones" allowed me to store complex data without creating multiple auxiliary tables, blending SQL strictness with NoSQL flexibility.</li>
+            </ul>
+        </div> 
+
+        <h3>3. How have you felt:</h3>
+        <p>I felt very technical and capable, especially when troubleshooting the connection between the Docker container and the local PostgreSQL server. Dealing with Foreign Key constraints during the deletion exercise was frustrating at first, but it reinforced the importance of referential integrity in a production database.</p>
+
+        <h3>4. What would you improve about your solutions:</h3>
+        <p>To improve the workflow, I would use a <strong>docker-compose.yaml</strong> file to orchestrate both the PostgreSQL database and the pgAdmin container. This would automate the passing of environment variables (like `PGADMIN_DEFAULT_EMAIL`) and network setup, avoiding the long manual `docker run` commands. I would also implement <code>ON DELETE CASCADE</code> constraints in the tables to solve the deletion issues I encountered manually.</p>
+
+        <h3>5. Technical words in English for the glossary:</h3>
+            <ul>
+                <li><strong>Materialized View:</strong> A database object that stores the result of a query physically on the disk, which must be refreshed manually to update data (unlike standard views).</li>
+                <li><strong>Inheritance:</strong> A feature in PostgreSQL where a table (e.g., `equipo_de_salto`) can inherit columns and constraints from a parent table (`equipo_base`).</li>
+                <li><strong>JSON (JavaScript Object Notation):</strong> A lightweight data-interchange format. PostgreSQL allows storing and querying JSON data directly.</li>
+                <li><strong>Foreign Key:</strong> A constraint that ensures the data in a column matches values in another table (e.g., linking a Horse to a Rider).</li>
+                <li><strong>pgAdmin:</strong> The most popular open-source administration and development platform for PostgreSQL.</li>
+            </ul>
+
+        <h3>6. What grade would you give the practice statement and why (0 to 10), and what would you improve:</h3>
+        <p>I would give this practice a 9 out of 10. It was very complete, covering everything from basic SQL to advanced configuration and modern features. To get a 10, I would include a section on backing up and restoring the database using `pg_dump`.</p>
+    </div>
+    <footer>
+        <p>All rights reserved ©</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Navarredonda Python</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../../styles/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="nav-item">
+                    <a href="../../index.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../iaw.html">IAW</a>
+                    <ul class="submenu">
+                        <li><a href="../iaw/extensiones_iaw.html">EXTENSIONES_VSC_IAW_RA1</a></li>
+                        <li><a href="../iaw/da2.html">DA2_RA15</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../seguridad.html">SECURITY</a>
+                    <ul class="submenu">
+                        <li><a href="../seguridad/attack_simulation.html">ATTACK_SIMULATION_RA12</a></li>
+                        <li><a href="../seguridad/coman2_linux.html">COMAN2_LINUX_RA1</a></li>
+                        <li><a href="../seguridad/malwares.html">MALWARES_RA123</a></li>
+                        <li><a href="../seguridad/exploit_boom.html">EXPLOIT_BOOM_RA123</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../bases_datos.html">DATABASES</a>
+                    <ul class="submenu">
+                        <li><a href="../bases_datos/dba_mysql.html">DBA_MYSQL_RA12</a></li>
+                        <li><a href="../bases_datos/users_mysql.html">USERS_MYSQL_RA23</a></li>
+                        <li><a href="../bases_datos/dba_sqlite.html">DBA_SQLITE_RA12</a></li>
+                        <li><a href="../bases_datos/postgres_dba.html">POSTGRES_DBA_RA34</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../python.html">PYTHON</a>
+                    <ul class="submenu">
+                        <li><a href="extensiones_python.html">EXTENSIONES_VSC_PYTHON_RA1</a></li>
+                        <li><a href="#">NAVARREDONDA_PYTHON_RA125</a></li>
+                        <li><a href="fastest_turtle.html">FASTEST_TURTLE_RA12345</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <h1>NAVARREDONDA_PYTHON_RA125</h1>
+        <h3>1. A mini-summary of what to do in the challenge:</h3>
+        <p>This challenge involved creating a Python script to calculate the entrance fee for the "Navarredonda" venue. The program asks for user information such as age, height, residence, and group type. It automatically determines the day of the week using the <code>datetime</code> module and simulates a membership status using the <code>random</code> module. Based on these factors, a complex logic of discounts and surcharges is applied to the base price of 45.00€, and the final result is displayed using custom ASCII art digits.</p>
+        
+        <h3>2. Two complex concepts that you have learned:</h3>
+        <div>
+            <ul>
+                <li><strong>ASCII Art with Dictionaries:</strong> I learned how to use a Python dictionary (<code>ASCII_DIGITS</code>) to map characters like numbers and symbols to specific list patterns, allowing the program to print the final price in a stylized, large graphic format directly in the console.</li>
+                <li><strong>Complex Conditional Logic:</strong> The script required implementing a detailed decision tree using <code>if-elif-else</code> structures to prioritize different pricing rules (e.g., granting free access to members over 65, or applying specific discounts for residents of Madrid vs. other provinces).</li>
+            </ul>
+        </div> 
+        
+        <h3>3. How have you felt:</h3>
+        <p>I felt stimulated by the logic challenge. Translating real-world pricing rules into code requires careful attention to the order of conditions to ensure the correct price is calculated.</p>
+        
+        <h3>4. What would you improve about your solutions:</h3>
+        <p>I would improve the input handling. Currently, if the user types "madrid" in lowercase or enters an invalid day type, the logic might fail. Adding input validation and normalization (e.g., <code>.lower()</code>) would make the script more robust.</p>
+        
+        <h3>5. Technical words in English for the glossary:</h3>
+            <ul>
+                <li><strong>Datetime:</strong> A Python module that supplies classes for manipulating dates and times, used here to find the current day name (e.g., 'Friday').</li>
+                <li><strong>Random:</strong> A module that implements pseudo-random number generators, used to decide if the user is a "Socio" or not.</li>
+                <li><strong>f-string:</strong> Formatted string literals (prefixed with 'f') that allow embedding expressions inside string literals, used for formatting the price to two decimal places.</li>
+                <li><strong>Float:</strong> A data type representing real numbers with a decimal point, used for the 'altura' (height) input.</li>
+            </ul>
+            
+        <h3>6. What grade would you give the practice statement and why (0 to 10), and what would you improve:</h3>
+        <p>I would give this practice a 9 out of 10. It is a great exercise for practicing control flow and dictionaries, though adding a requirement for loops (other than printing) could make it even more complete.</p>
+    </div>
+    <footer>
+        <p>All rights reserved ©</p>
+    </footer>
+</body>
+</html>
